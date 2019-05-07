@@ -19,14 +19,18 @@ export default class App extends Component {
     this.setState({ savedList });
   };
 
+
+// Passing props using Route
+// <Route path="/avengers/:id/movies" render={() => <AvengerMovies avenger={avenger} />}>
+
   render() {
     return (
       <div>
         <SavedList list={this.state.savedList} />
         
         <Route exact path='/' component={MovieList} />
-        {/* <Route path='/movies/:id' Component={Movie} /> */}
-        <Route path='/movies/:id' component={Movie} />
+        {/* <Route path='/movies/:id' component={Movie} /> */}
+        <Route path='/movies/:id' render={props => (<Movie {...props} addToSavedList={this.addToSavedList} />)} />
       </div>
     );
   }
