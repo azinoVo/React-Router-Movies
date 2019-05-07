@@ -15,6 +15,7 @@ export default class Movie extends Component {
     this.fetchMovie(id);
   }
 
+  //fetch movie and set that movie on state
   fetchMovie = id => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
@@ -33,6 +34,7 @@ export default class Movie extends Component {
     }
   }
 
+  // sent that movie on state into the saved List when the save button is pressed
   saveMovie = () => {
     const addToSavedList = this.props.addToSavedList;
     addToSavedList(this.state.movie)

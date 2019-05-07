@@ -13,6 +13,9 @@ export default class App extends Component {
     };
   }
 
+  //pushes the movie in state from Movie into the savedList array; set the 
+  //savedList into the current with the new movie added
+
   addToSavedList = movie => {
     const savedList = this.state.savedList;
     savedList.push(movie);
